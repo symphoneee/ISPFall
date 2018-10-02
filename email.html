@@ -1,6 +1,60 @@
+
 <!DOCTYPE html>
 <html>
+
 <body>
+Aaron's webpage of calculations!<br>
+
+The current date and time is:
+<p id="date"></p>
+<script>
+document.getElementById("date").innerHTML = Date();
+</script>
+</body>
+
+</html>
+<html>
+<style>
+body {background-color: #B3B6B7;}
+</style>
+<head>
+
+<script>
+function validateEmail() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+      }
+    else
+      alert("Email address is valid");
+}
+</script>
+
+
+
+
+
+</head>
+<body>
+<strong><h2 style="font-size:22px; color:white; font-family:verdana">AARON T HERMAN</h2></strong>
+
+
+
+<script>
+document.getElementById("demo").innerHTML = Date();
+</script>
+
+<p>
+
+<form name="myForm" action="demo_form.asp" onsubmit="return validateEmail();" method="post">
+Enter Email address: <input type="text" name="email">
+<input type="submit" value="Validate">
+</form>
+
+
 
 <p>Click the button to factorialize a number.</p>
 
@@ -14,62 +68,44 @@ function display() {
     var num = prompt("Please enter a positive number", "8");
     
     document.getElementById("demo").innerHTML = "The factorial of " + num + " is " + factorial(num);
-
 }
 </script>
 
 <script>
-	function factorial(x){
+  function factorial(x){
    if (x < 0)
         alert("You must enter a positive number!");
     else if (x ==0)
-    	return 1;
+      return 1;
     else {
-    	return (x * factorial(x - 1));
+      return (x * factorial(x - 1));
         }
 }
 </script>
 
 
 
-<h2 id='result'></h2>
+<p id="demo"></p>
 
 
+<img id="mover" src="fish.jpg" style="width:304px;height:228px;">
+
+</body>
+
+<script lang="javascript" >
 
 
-
-
-<p>Click the button to validate and Email address.</p>
-
-<button onclick="validate()">Validate!</button>
-
-<p id="demo2"></p>
-
-<script>
-function validate() {
-   
-    var em = prompt("Please enter an email address:", "Example: bob@bob.com");
-    
-    ValidateEmail(em);
-
-
-}
-</script>
-
-
-<script>
-function ValidateEmail() 
+function movePic( e )
 {
- if document.getElementById("demo2").innerHTML =  (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
-  {
-     return document.getElementById("demo2").innerHTML = "The email address is valid!";
-  }
-    return document.getElementById("demo2").innerHTML = "The email address is invalid!";
+    var mover = document.getElementById("mover");
+    mover.style.left = e.x;
+    mover.style.top = e.y;
+
 }
+
+document.onclick = movePic;
+
+
 </script>
 
-</body>
-
-
-</body>
 </html>
