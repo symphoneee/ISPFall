@@ -12,10 +12,10 @@
 	
 	
 	// If any of numerical values are blank, set them to zero
-    if (nid == "") id = 0;
-    if (nmiles == "") miles = 0.0;
-    if (nyear == "") year = 0;
-    if (nstate == "") state = 0;
+    if (nid == "") request.getParameter("id") = 0;
+    if (nmiles == "") request.getParameter("miles") = 0.0;
+    if (nyear == "") request.getParameter("year") = 0;
+    if (nstate == "") request.getParameter("state") = 0;
 
 
 
